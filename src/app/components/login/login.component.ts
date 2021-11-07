@@ -11,10 +11,11 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-  onAddForm = (data: any) => {
+  login = (data: any) => {
     const email = data.form.value.email;
     const password = data.form.value.password;
     this.router.navigate(['/list']);
+    localStorage.setItem('isLoggedIn', 'true');
   }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToDoItem } from 'src/app/models/ToDoItem';
 
 @Component({
@@ -7,7 +7,7 @@ import { ToDoItem } from 'src/app/models/ToDoItem';
   styleUrls: ['./to-do-list.component.css']
 })
 
-export class ToDoListComponent implements OnInit {
+export class ToDoListComponent implements OnInit, OnDestroy {
 
   items: ToDoItem[] = [
     {
@@ -27,10 +27,15 @@ export class ToDoListComponent implements OnInit {
     }
   ];
 
-  constructor() { 
+  constructor() {
   }
 
   ngOnInit(): void {
+    console.log('onInit was called');
+  }
+
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy was called');
   }
 
 }

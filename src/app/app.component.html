@@ -1,10 +1,10 @@
-<nav>
+<nav *ngIf="isLoggedIn()">
     <div [routerLink]="['/']">Home</div>
     <div [routerLink]="['/list']">List</div>
     <div [routerLink]="['/profile']">Profile</div>
 </nav>
 
+<app-login *ngIf="!isLoggedIn()"></app-login>
+
 <router-outlet></router-outlet>
-<!-- 
-<app-login></app-login> -->
 

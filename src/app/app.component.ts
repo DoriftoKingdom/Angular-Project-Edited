@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  name = 'test';
-  showParagraph = () => { return this.name.length; }
+  isLoggedIn = () => {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  };
 }
