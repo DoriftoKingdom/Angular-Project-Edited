@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let item of items">
-        {{item.title}}
-    </li>
+    <app-to-do-list-item [item]="i" *ngFor="let i of items">
+        {{i.title}}
+    </app-to-do-list-item>
 </ul>
