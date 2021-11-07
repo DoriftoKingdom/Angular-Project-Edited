@@ -10,16 +10,13 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   constructor(
-    private router: Router
+    
   ) {
-  }
 
+  }
   isLoggedIn = () => {
     return localStorage.getItem('isLoggedIn') === 'true';
   };
 
-  logOut = () => {
-    this.router.navigate(['/']);
-    localStorage.setItem('isLoggedIn', 'false');
-  }
+  
 }
