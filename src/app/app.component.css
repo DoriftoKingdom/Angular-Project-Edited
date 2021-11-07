@@ -1,0 +1,8 @@
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background: #262686;
+    color: white;
+    height: 40px;
+    align-items: center;
+}
