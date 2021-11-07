@@ -2,6 +2,7 @@
     <div [routerLink]="['/']">Home</div>
     <div [routerLink]="['/list']">List</div>
     <div [routerLink]="['/profile']">Profile</div>
+    <div (click)="logOut()">Log Out</div>
 </nav>
 
 <app-login *ngIf="!isLoggedIn()"></app-login>
