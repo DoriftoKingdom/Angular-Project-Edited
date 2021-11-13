@@ -26,7 +26,7 @@ export class ToDoListComponent implements OnInit {
   ngOnInit(): void {
     this.beService.getItems().subscribe(
       (response) => {
-        console.log(response)
+        this.items = response;
       });
     console.log('onInit was called');
   }

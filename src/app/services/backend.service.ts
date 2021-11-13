@@ -20,7 +20,7 @@ export class BackendService {
   }
 
   postItem(item: ToDoItem) {
-    return this.http.post('http://localhost:3000/items', {item});
+    return this.http.post('http://localhost:3000/items', item);
   }
 
   // CRUD users
