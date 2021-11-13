@@ -5,3 +5,11 @@
     justify-content: center;
     margin: auto;
 }
+
+button.login-button { 
+    border-radius: 8px;
+    background: blueviolet;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+}
