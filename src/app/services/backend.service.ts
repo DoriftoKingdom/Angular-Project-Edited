@@ -15,9 +15,5 @@ export class BackendService {
   getItems(): Observable<Array<ToDoItem>> {
     return this.http.get<Array<ToDoItem>>('http://localhost:3000/items');
   }
-
-  // getItems() {
-  //   return this.http.get<Array<any>>();
-  // }
-
+  
 }

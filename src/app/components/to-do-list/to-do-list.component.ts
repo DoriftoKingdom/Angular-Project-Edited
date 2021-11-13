@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToDoItem } from 'src/app/models/ToDoItem';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-to-do-list',
@@ -7,19 +8,21 @@ import { ToDoItem } from 'src/app/models/ToDoItem';
   styleUrls: ['./to-do-list.component.css']
 })
 
-export class ToDoListComponent implements OnInit, OnDestroy {
+export class ToDoListComponent implements OnInit {
 
   items: ToDoItem[] = [];
 
-  constructor() {
+  constructor(
+    private beService: BackendService
+  ) {
   }
 
   ngOnInit(): void {
+    this.beService.getItems().subscribe(
+      (response) => {
+        console.log(response)
+      });
     console.log('onInit was called');
-  }
-
-  ngOnDestroy(): void {
-    console.log('ngOnDestroy was called');
   }
 
 }
