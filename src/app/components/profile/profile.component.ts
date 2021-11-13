@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor() { }
+  constructor(
+    private beService: BackendService
+  ) { }
+  username = '';
 
   ngOnInit(): void {
+    this.beService.getUsers().subscribe(users => {
+      this.username = users[0].name;
+    });
   }
 
 }
