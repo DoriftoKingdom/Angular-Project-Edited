@@ -9,23 +9,7 @@ import { ToDoItem } from 'src/app/models/ToDoItem';
 
 export class ToDoListComponent implements OnInit, OnDestroy {
 
-  items: ToDoItem[] = [
-    {
-      id: 1,
-      title: 'Study Angular',
-      description: 'My description'
-    },
-    {
-      id: 2,
-      title: 'Study HTML',
-      description: 'My description'
-    },
-    {
-      id: 3,
-      title: 'Study CSS',
-      description: 'My description'
-    }
-  ];
+  items: ToDoItem[] = [];
 
   constructor() {
   }
