@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToDoItem } from 'src/app/models/ToDoItem';
 
+
 @Component({
   selector: 'app-to-do-list-item',
   templateUrl: './to-do-list-item.component.html',
