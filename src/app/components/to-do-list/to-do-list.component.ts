@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ToDoItem } from 'src/app/models/ToDoItem';
 import { BackendService } from 'src/app/services/backend.service';
 
@@ -17,10 +18,16 @@ export class ToDoListComponent implements OnInit {
   ) {
   }
 
-  addItem(data:any) {
+  addItem(data: NgForm) {
     const item = data.form.value;
-    this.beService.postItem(item).subscribe();
+    this.beService.postItem(item).subscribe(
+      (res: ToDoItem) => {
+        this.items.push(res);
+      }
+    );
     console.log(item);
+    // clears form inputs
+    data.reset();
   }
 
   ngOnInit(): void {
@@ -28,7 +35,6 @@ export class ToDoListComponent implements OnInit {
       (response) => {
         this.items = response;
       });
-    console.log('onInit was called');
   }
 
 }

@@ -19,8 +19,8 @@ export class BackendService {
     return this.http.get<Array<ToDoItem>>('http://localhost:3000/items');
   }
 
-  postItem(item: ToDoItem) {
-    return this.http.post('http://localhost:3000/items', item);
+  postItem(item: ToDoItem): Observable<ToDoItem> {
+    return this.http.post<ToDoItem>('http://localhost:3000/items', item);
   }
 
   // CRUD users
