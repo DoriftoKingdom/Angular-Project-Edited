@@ -17,6 +17,12 @@ export class ToDoListComponent implements OnInit {
   ) {
   }
 
+  addItem(data:any) {
+    const item = data.form.value;
+    this.beService.postItem(item).subscribe();
+    console.log(item);
+  }
+
   ngOnInit(): void {
     this.beService.getItems().subscribe(
       (response) => {
