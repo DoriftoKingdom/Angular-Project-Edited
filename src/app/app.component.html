@@ -1,5 +1,5 @@
 <app-menu *ngIf="isLoggedIn()"></app-menu>
-<app-login *ngIf="!isLoggedIn()"></app-login>
+<app-login *ngIf="!isLoggedIn() && isNotSignup()"></app-login>
 
 <router-outlet></router-outlet>
 

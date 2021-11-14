@@ -9,10 +9,13 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
 
-  constructor() {
+  constructor() {}
 
-  }
   isLoggedIn = () => {
     return localStorage.getItem('isLoggedIn') === 'true';
   };
+
+  isNotSignup = () => {
+    return window.location.pathname !== '/signup';
+  }
 }

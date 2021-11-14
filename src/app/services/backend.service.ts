@@ -34,4 +34,8 @@ export class BackendService {
     return this.http.get<Array<User>>(`${this.baseUrl}/users`);
   }
   
+  postUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}/users`, user);
+  }
+  
 }

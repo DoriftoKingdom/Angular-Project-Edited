@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { SignupComponent } from './components/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import {MatButtonModule} from '@angular/material/button';
     ToDoListItemComponent,
     LoginComponent,
     ProfileComponent,
-    MenuComponent
+    MenuComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
