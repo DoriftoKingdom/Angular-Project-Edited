@@ -30,11 +30,15 @@ export class ToDoListComponent implements OnInit {
     data.reset();
   }
 
-  ngOnInit(): void {
+  getItems() {
     this.beService.getItems().subscribe(
       (response) => {
         this.items = response;
       });
+  }
+
+  ngOnInit(): void {
+   this.getItems();
   }
 
 }

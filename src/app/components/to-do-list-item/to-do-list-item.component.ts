@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ToDoItem } from 'src/app/models/ToDoItem';
 import { BackendService } from 'src/app/services/backend.service';
 
@@ -10,11 +10,14 @@ import { BackendService } from 'src/app/services/backend.service';
 })
 export class ToDoListItemComponent implements OnInit {
   @Input() item: any;
+  @Output() itemDeleted = new EventEmitter();
 
   constructor(private beService: BackendService) { }
 
   deleteItem(id: number) {
-    this.beService.deleteItem(id).subscribe();
+    this.beService.deleteItem(id).subscribe(() => {
+      this.itemDeleted.emit();
+    });
   }
 
   ngOnInit(): void {

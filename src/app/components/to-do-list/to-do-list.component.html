@@ -14,7 +14,7 @@
 </form>
 
 <ul>
-    <app-to-do-list-item [item]="i" *ngFor="let i of items">
+    <app-to-do-list-item (itemDeleted)="getItems()" [item]="i" *ngFor="let i of items">
         {{i.title}}
     </app-to-do-list-item>
 </ul>
