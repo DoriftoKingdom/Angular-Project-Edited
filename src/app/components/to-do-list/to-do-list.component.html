@@ -1,10 +1,4 @@
-<ul>
-    <app-to-do-list-item [item]="i" *ngFor="let i of items">
-        {{i.title}}
-    </app-to-do-list-item>
-</ul>
-
-<form #f="ngForm" (ngSubmit)="addItem(f)" class="add-form">
+<form #f="ngForm" (ngSubmit)="addItem(f)" class="add-item-form">
 
     <label for="title">Title</label>
     <input placeholder="Title" type="text" ngModel name="title" required>
@@ -18,3 +12,10 @@
     
     <button class="add-button" type="submit">Add Item</button>
 </form>
+
+<ul>
+    <app-to-do-list-item [item]="i" *ngFor="let i of items">
+        {{i.title}}
+    </app-to-do-list-item>
+</ul>
+

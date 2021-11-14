@@ -1,14 +1,17 @@
 .item {
-    border: 1px dashed blue;
-    width: 300px;
-    background: beige;
+  border: 1px dashed blue;
+  width: 300px;
+  background: beige;
 }
 
-.example-card {
-    max-width: 400px;
-  }
-  
+.item-card {
+  max-width: 800px;
+  margin: 35px;
+  border: 1px solid black;
+  padding: 31px;
+}
+
 .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
 }
