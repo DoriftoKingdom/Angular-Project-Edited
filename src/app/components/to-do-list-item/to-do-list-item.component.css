@@ -1,6 +1,10 @@
+:host {
+  width: 33%;
+}
+
 .item {
   border: 1px dashed blue;
-  width: 300px;
+  width: 33%;
   background: beige;
 }
 
