@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './auth-guard.service';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
@@ -7,7 +8,8 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
 const routes: Routes = [
   {
     path: 'list',
-    component: ToDoListComponent
+    component: ToDoListComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'login',
@@ -15,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuardService]
   }
 ];
 
