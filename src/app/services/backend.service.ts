@@ -23,6 +23,10 @@ export class BackendService {
     return this.http.post<ToDoItem>('http://localhost:3000/items', item);
   }
 
+  deleteItem(id: number): Observable<ToDoItem> {
+    return this.http.delete<ToDoItem>('http://localhost:3000/'+id);
+  }
+
   // CRUD users
 
   getUsers(): Observable<Array<User>> {
