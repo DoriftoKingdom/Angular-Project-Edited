@@ -37,5 +37,5 @@ export class BackendService {
   postUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.baseUrl}/users`, user);
   }
-  
+
 }

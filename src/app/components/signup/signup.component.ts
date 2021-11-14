@@ -24,9 +24,8 @@ export class SignupComponent implements OnInit {
       () => {
         alert('User added!');
         formData.reset();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       }
     );
   }
-
 }
