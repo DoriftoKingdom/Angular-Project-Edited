@@ -8,7 +8,7 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class BackendService {
-  baseUrl = 'http://localhost:3000'
+  baseUrl = 'http://localhost:3000';
 
   constructor(
     private http: HttpClient
@@ -17,21 +17,21 @@ export class BackendService {
   // CRUD items
 
   getItems(): Observable<Array<ToDoItem>> {
-    return this.http.get<Array<ToDoItem>>('http://localhost:3000/items');
+    return this.http.get<Array<ToDoItem>>(`${this.baseUrl}/items`);
   }
 
   postItem(item: ToDoItem): Observable<ToDoItem> {
-    return this.http.post<ToDoItem>('http://localhost:3000/items', item);
+    return this.http.post<ToDoItem>(`${this.baseUrl}/items`, item);
   }
 
   deleteItem(id: number): Observable<ToDoItem> {
-    return this.http.delete<ToDoItem>('http://localhost:3000/items/'+id);
+    return this.http.delete<ToDoItem>(`${this.baseUrl}/items/`+id);
   }
 
   // CRUD users
 
   getUsers(): Observable<Array<User>> {
-    return this.http.get<Array<User>>('http://localhost:3000/users');
+    return this.http.get<Array<User>>(`${this.baseUrl}/users`);
   }
   
 }
