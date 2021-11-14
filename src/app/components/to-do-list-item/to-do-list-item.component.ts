@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToDoItem } from 'src/app/models/ToDoItem';
+import { BackendService } from 'src/app/services/backend.service';
 
 
 @Component({
@@ -10,7 +11,11 @@ import { ToDoItem } from 'src/app/models/ToDoItem';
 export class ToDoListItemComponent implements OnInit {
   @Input() item: any;
 
-  constructor() { }
+  constructor(private beService: BackendService) { }
+
+  deleteItem(id: number) {
+    this.beService.deleteItem(id).subscribe();
+  }
 
   ngOnInit(): void {
   }

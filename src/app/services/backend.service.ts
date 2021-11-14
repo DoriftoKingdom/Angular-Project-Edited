@@ -8,6 +8,7 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class BackendService {
+  baseUrl = 'http://localhost:3000'
 
   constructor(
     private http: HttpClient
@@ -24,7 +25,7 @@ export class BackendService {
   }
 
   deleteItem(id: number): Observable<ToDoItem> {
-    return this.http.delete<ToDoItem>('http://localhost:3000/'+id);
+    return this.http.delete<ToDoItem>('http://localhost:3000/items/'+id);
   }
 
   // CRUD users
